@@ -1,0 +1,35 @@
+{
+  "name": "api.dotmarking",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "npm install pm2 -g",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.express.js",
+    "start": "pm2-runtime start config/ecosystem.config.js --env production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pieroxa2012/api.dotmarking.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pieroxa2012/api.dotmarking/issues"
+  },
+  "homepage": "https://github.com/pieroxa2012/api.dotmarking#readme",
+  "dependencies": {
+    "compression": "^1.7.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "express-load": "^1.1.16",
+    "express-promise-router": "^3.0.3",
+    "helmet": "^3.13.0",
+    "mongoose": "^5.2.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  }
+}
