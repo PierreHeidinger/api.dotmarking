@@ -16,7 +16,6 @@ class Server {
 
     async config()
     {
-
         this.express.set('Port', process.env.PORT || 3000);
 
         await new Application().config(this.express);
