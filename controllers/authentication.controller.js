@@ -9,10 +9,11 @@ class authentication
     {
         const parameters = request.body;
 
-        const existUser = User.findOne({
-            user : parameters.user
+        const existUser = await User.findOne({
+            user : parameters.user,
+            company : parameters.company
         });
-
+    
         if(existUser) throw new Error('User Exists');
 
         new User(parameters).save();
