@@ -12,7 +12,7 @@ class Server {
     constructor()
     {
         this.express = express();    
-    }
+    };
 
     async config()
     {
@@ -21,14 +21,12 @@ class Server {
         await new Application().config(this.express);
 
         load("controllers").then("routers").into(this.express);
-    }
+    };
 
     async configMongodb()
     {
         await new Mongoose().configMongodb()
-    }
-
-
+    };
 
     async run()
     {   
