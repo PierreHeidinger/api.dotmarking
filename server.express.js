@@ -18,7 +18,7 @@ class Server {
     {
         this.express.set('Port', process.env.PORT || 3000);
 
-        await new Application().config(this.express);
+        this.express = await new Application().config(this.express);
 
         load("controllers").then("routers").into(this.express);
     };

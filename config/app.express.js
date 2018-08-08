@@ -8,11 +8,15 @@ class Application {
 
     async config(app)
     {
+          console.log('init middlewares')
+          
           //middlewares
           app.use(express.json());
           app.use(cors());
           app.use(helmet());
           app.use(compression());
+
+          return app;
 
     }
 
