@@ -7,9 +7,7 @@ const compression = require('compression')
 class Application {
 
     async config(app)
-    {
-          console.log('init middlewares')
-          
+    {       
           //middlewares
           app.use(express.json());
           app.use(cors());
@@ -17,7 +15,6 @@ class Application {
           app.use(compression());
 
           return app;
-
     }
 
 }

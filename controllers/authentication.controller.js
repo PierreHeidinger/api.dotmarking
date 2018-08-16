@@ -37,7 +37,7 @@ class authentication
 
         const token = await jwt.sign(objectToken,key,
         {
-            expiresIn : 1800 //30 seconds
+            expiresIn : 180 //30 seconds
         })
 
         response.status(200).json({
@@ -57,6 +57,18 @@ class authentication
 
         next();
 
+    };
+
+    async verifySession(request,response)
+    {
+        console.log('entro')
+
+        const key = appConfiguration.SecretKeyToken;
+        const token = request.headers['x-access-token'];
+        console.log(token)
+        const decode = await jwt.verify(token,key);
+
+        if(decode) response.status(200).json({ auth : true });
     };
 
     async getDecodeToken(request)

@@ -12,6 +12,8 @@ const Authentication = (app) =>
 
     router.post('/login',_authentication.login);
 
+    router.get('/verifyStatus',_authentication.verifySession)
+
     //express
     app.use('/api',router)
 }
