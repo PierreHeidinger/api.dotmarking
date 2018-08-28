@@ -1,5 +1,6 @@
 const express = require('express');
 const load = require('express-load')
+const path = require('path')
 
 //config app
 const { Application } = require('./config/app.express.js')
@@ -17,6 +18,8 @@ class Server {
     async config()
     {
         this.express.set('Port', process.env.PORT || 3000);
+
+        this.express.use('/',express.static(path.join(__dirname,'/public')));
 
         this.express = await new Application().config(this.express);
 
