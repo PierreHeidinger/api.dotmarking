@@ -1,7 +1,0 @@
-{
-    "server" : "ds259820.mlab.com",
-    "port" : "59820",
-    "database" : "projects",
-    "user" : "admin",
-    "password" : "admin123"    
-}

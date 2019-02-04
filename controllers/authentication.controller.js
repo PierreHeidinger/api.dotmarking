@@ -1,7 +1,5 @@
 const jwt = require('jsonwebtoken')
-const appConfiguration = require('../app.json')
 const { User } = require('../models/index')
-
 
 class authentication 
 {
@@ -23,7 +21,7 @@ class authentication
 
     async login(request,response)
     {
-        const key = appConfiguration.SecretKeyToken;
+        const key = process.env.KEY_TOKEN;
         const creadentials = request.body;
 
         const user = await findUser(creadentials);
@@ -48,7 +46,7 @@ class authentication
 
     async authenticate(request,responde,next)
     {
-        const key = appConfiguration.SecretKeyToken;
+        const key = this.process.env.KEY_TOKEN;
         const token = request.headers['x-access-token'];
 
         if (!token) return responde.status(401).send({ auth: false, message: 'No token provided.' });
@@ -63,7 +61,7 @@ class authentication
     {
         console.log('entro')
 
-        const key = appConfiguration.SecretKeyToken;
+        const key = this.process.env.KEY_TOKEN ;
         const token = request.headers['x-access-token'];
         console.log(token)
         const decode = await jwt.verify(token,key);
@@ -73,7 +71,7 @@ class authentication
 
     async getDecodeToken(request)
     {
-        const key = appConfiguration.SecretKeyToken;
+        const key = this.process.env.KEY_TOKEN ;
         const token = request.headers['x-access-token'];
 
         return await jwt.verify(token,key);

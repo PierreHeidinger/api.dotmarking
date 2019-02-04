@@ -1,14 +1,17 @@
 const mongoose = require('mongoose')
 
-//file of configuration Mongodb
-const configMongo = require('../mongodb.json');
-
 class Mongoose {
 
     async configMongodb()
     {
+        const user = process.env.DB_USER;
+        const password = process.env.DB_PASSWORD;
+        const server = process.env.DB_SERVER_PATH;
+        const port = process.env.DB_PORT;
+        const database = process.env.DB_DATA_BASE;
+
         //config database remote
-        await mongoose.connect(`mongodb://${ configMongo.user }:${ configMongo.password }@${ configMongo.server }:${ configMongo.port}/${ configMongo.database }`,
+        await mongoose.connect(`mongodb://${ user }:${ password }@${ server }:${ port }/${ database }`,
         { 
             useNewUrlParser: true 
         })

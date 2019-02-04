@@ -6,7 +6,6 @@ const Authentication = (app) =>
 {
     const _authentication = new authenticationController();
 
-
     //Routes
     router.post('/register',_authentication.register);
 

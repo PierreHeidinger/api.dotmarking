@@ -7,7 +7,7 @@ module.exports = {
   
       // First application
       {
-        name      : 'api_v1',
+        name      : process.env.API_NAME,
         script    : 'server.express.js',
         instances : "max",
         exec_mode : "cluster" ,
@@ -19,7 +19,7 @@ module.exports = {
         },
         env_production : {
           NODE_ENV: 'production'
-        }
+}
       }
     ]
   };

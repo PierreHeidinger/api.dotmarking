@@ -3,6 +3,9 @@ const cors = require('cors')
 const helmet = require('helmet')
 const compression = require('compression')
 
+//Enviroment
+require('dotenv').config();
+
 
 class Application {
 
