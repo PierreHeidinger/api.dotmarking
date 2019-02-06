@@ -10,8 +10,12 @@ class Mongoose {
         const port = process.env.DB_PORT;
         const database = process.env.DB_DATA_BASE;
 
+        const connection = `mongodb://${ user }:${ password }@${ server }:${ port }/${ database }`;
+
+        console.log(connection);
+        
         //config database remote
-        await mongoose.connect(`mongodb://${ user }:${ password }@${ server }:${ port }/${ database }`,
+        await mongoose.connect(connection,
         { 
             useNewUrlParser: true 
         })
