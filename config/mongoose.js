@@ -12,8 +12,6 @@ class Mongoose {
 
         const connection = `mongodb://${ user }:${ password }@${ server }:${ port }/${ database }`;
 
-        console.log(connection);
-        
         //config database remote
         await mongoose.connect(connection,
         { 

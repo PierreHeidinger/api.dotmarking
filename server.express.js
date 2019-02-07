@@ -37,7 +37,8 @@ class Server {
         
         await this.configMongodb();
 
-        await this.express.listen(this.express.get('Port'), ()=>{
+        await this.express.listen(this.express.get('Port'), ()=>
+        {
             console.log(`Server on Port ${ this.express.get('Port') }`);
         });
     };

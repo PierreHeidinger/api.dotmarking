@@ -46,7 +46,7 @@ class authentication
 
     async authenticate(request,responde,next)
     {
-        const key = this.process.env.KEY_TOKEN;
+        const key = process.env.KEY_TOKEN;
         const token = request.headers['x-access-token'];
 
         if (!token) return responde.status(401).send({ auth: false, message: 'No token provided.' });
@@ -61,7 +61,7 @@ class authentication
     {
         console.log('entro')
 
-        const key = this.process.env.KEY_TOKEN ;
+        const key = process.env.KEY_TOKEN ;
         const token = request.headers['x-access-token'];
         console.log(token)
         const decode = await jwt.verify(token,key);
@@ -71,7 +71,7 @@ class authentication
 
     async getDecodeToken(request)
     {
-        const key = this.process.env.KEY_TOKEN ;
+        const key = process.env.KEY_TOKEN ;
         const token = request.headers['x-access-token'];
 
         return await jwt.verify(token,key);
