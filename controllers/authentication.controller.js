@@ -59,8 +59,6 @@ class authentication
 
     async verifySession(request,response)
     {
-        console.log('entro')
-
         const key = process.env.KEY_TOKEN ;
         const token = request.headers['x-access-token'];
         console.log(token)

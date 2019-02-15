@@ -1,5 +1,7 @@
-const  User = require('./user');
+const User = require('./user');
+const ValueKey = require('./valueKey');
 
 module.exports = {
-    User
+    User,
+    ValueKey
 }
